@@ -8,8 +8,14 @@ print(onlyfiles)
 print("../")
 print(listdir("../"))
 
+print("../action-net-packages")
+print(listdir("../action-net-packages"))
+
 print("../../")
 print(listdir("../../"))
+
+print("../../action-net-packages")
+print(listdir("../../action-net-packages"))
 
 print("../../../")
 print(listdir("../../../"))
