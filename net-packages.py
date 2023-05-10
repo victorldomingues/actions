@@ -6,7 +6,7 @@ print("file")
 print(onlyfiles)
 
 print("all")
-print(listdir("../action-net-packages"))
+print(listdir("../../"))
 
 print("current")
 print(listdir("."))
