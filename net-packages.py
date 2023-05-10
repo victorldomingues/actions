@@ -3,7 +3,7 @@ from fnmatch import fnmatch
 import re
 import json
 
-root = '../'
+root = '../../'
 pattern = "*.csproj"
 
 def read(path, name):
