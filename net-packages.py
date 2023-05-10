@@ -3,7 +3,7 @@ from fnmatch import fnmatch
 import re
 import json
 
-root = '../'
+root = './'
 pattern = "*.csproj"
 
 def read(path, name):
@@ -21,6 +21,8 @@ def read(path, name):
 
 file_list = []
 for path, subdirs, files in os.walk(root):
+    print("files")
+    print(files)
     for name in files:
         if fnmatch(name, pattern):
             file = {
