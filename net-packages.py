@@ -1,35 +1,48 @@
-import os
-from fnmatch import fnmatch
-import re
-import json
+from os import listdir
+from os.path import isfile, join
+onlyfiles = [f for f in listdir("../") if isfile(join("../", f))]
 
-root = '.'
-pattern = "*.csproj"
+print("file")
+print(onlyfiles)
 
-def read(path, name):
-    result = []
-    file = os.path.join(path, name)
-    regex = re.compile("<PackageReference.*.Include=\"*.*\".*.Version=\".*.\".*.>")
-    with open(file) as f:
-        for line in f:
-            search = regex.search(line)
-            if search is not None :
-                result.append(search.group()
-                                    .strip())
+print("all")
+print(listdir("../"))
 
-    return result
+print("current")
+print(listdir("."))
 
-file_list = []
-for path, subdirs, files in os.walk(root):
-    print("files")
-    print(files)
-    for name in files:
-        if fnmatch(name, pattern):
-            file = {
-                name: read(path, name)
-            }
-            file_list.append(file)
+# import os
+# from fnmatch import fnmatch
+# import re
+# import json
+
+# root = '.'
+# pattern = "*.csproj"
+
+# def read(path, name):
+#     result = []
+#     file = os.path.join(path, name)
+#     regex = re.compile("<PackageReference.*.Include=\"*.*\".*.Version=\".*.\".*.>")
+#     with open(file) as f:
+#         for line in f:
+#             search = regex.search(line)
+#             if search is not None :
+#                 result.append(search.group()
+#                                     .strip())
+
+#     return result
+
+# file_list = []
+# for path, subdirs, files in os.walk(root):
+#     print("files")
+#     print(files)
+#     for name in files:
+#         if fnmatch(name, pattern):
+#             file = {
+#                 name: read(path, name)
+#             }
+#             file_list.append(file)
             
-print(json.dumps(file_list))
+# print(json.dumps(file_list))
 
 
