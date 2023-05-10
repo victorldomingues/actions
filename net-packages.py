@@ -5,6 +5,9 @@ onlyfiles = [f for f in listdir("../") if isfile(join("../", f))]
 print("file")
 print(onlyfiles)
 
+print("../")
+print(listdir("../"))
+
 print("../../")
 print(listdir("../../"))
 
